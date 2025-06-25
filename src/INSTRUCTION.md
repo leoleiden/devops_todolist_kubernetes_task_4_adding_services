@@ -69,7 +69,7 @@ spec:
     targetPort: 8080 # Порт, на якому слухає контейнер (ваш Django додаток)
   type: ClusterIP
 ```
-- Create a file named kubernetes-manifests/nodeport-service.yaml.yaml with the following content:
+- Create a file named kubernetes-manifests/nodeport-service.yaml with the following content:
 ```
 apiVersion: v1
 kind: Service
