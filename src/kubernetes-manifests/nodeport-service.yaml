@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: todolist-nodeport-service
+spec:
+  selector:
+    app: todolist # Цей селектор співпадає з міткою на наших подах
+  ports:
+  - protocol: TCP
+    port: 80 # Внутрішній порт сервісу
+    targetPort: 8080 # Порт, на якому слухає контейнер
+    nodePort: 30080 # Порт, який буде відкрито на кожному вузлі кластера (повинен бути в діапазоні 30000-32767)
+  type: NodePort
